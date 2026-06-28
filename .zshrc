@@ -73,9 +73,13 @@ bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 
 ### use alt+arrow the right way
-export WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
+export WORDCHARS='*?_[]~=&;!#$%^(){}<>'
 bindkey "^[^[[C" forward-word
 bindkey "^[^[[D" backward-word
+
+### stop word deletion at punctuation (., -, / etc.)
+autoload -U select-word-style
+select-word-style bash
 
 ## Aliases and more
 alias pycharm='open -b com.jetbrains.pycharm'
